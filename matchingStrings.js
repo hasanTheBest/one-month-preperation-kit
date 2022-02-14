@@ -17,18 +17,19 @@ var strings = [
 ];
 
 function matchingStrings(strings, queries) {
-  // Write your code here
-  let result = [],
-    repeat = 0;
+  let result = [];
+
   for (let query of queries) {
-    result.push(itemCount(strings, query));
+    result.push(itemCount(strings, query, 0));
   }
+
+  return result;
 }
 
 console.log(matchingStrings(strings, queries));
 // output [1, 3, 4, 3, 2]
 
-function itemCount(strings, query) {
+function itemCount(strings, query, repeat) {
   const firstIndex = strings.indexOf(query);
   const lastIndex = strings.lastIndexOf(query);
 
@@ -38,10 +39,8 @@ function itemCount(strings, query) {
     } else {
       let newStrings = strings.slice(firstIndex + 1, lastIndex);
       repeat += 2;
-      itemCount(newStrings, query);
+      return itemCount(newStrings, query, repeat);
     }
-  } else {
-    return 0;
   }
 
   return repeat;
