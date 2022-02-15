@@ -1,18 +1,18 @@
 function lonelyinteger(a) {
   const count = {};
-  let expectItem = a[0];
 
   for (let item of a) {
-    if (!count[item]) {
-      count[item] = 1;
-      expectItem = item;
+    if (!count[String(item)]) {
+      count[String(item)] = 1;
     } else {
-      count[item]++;
+      count[String(item)]++;
     }
   }
 
-  console.log(Object.entries(count));
-  return expectItem;
+  const keys = Object.keys(count);
+  const values = Object.values(count);
+
+  return parseInt(keys[values.indexOf(1)]);
 }
 
 console.log(lonelyinteger([1, 4, 0, 0, 10, 20, 0, 10, 20, 100, 100, 2, 2, 1]));
