@@ -22,3 +22,9 @@ console.log(flippingBits(1));
 // 2147483647 = 2147483648
 // 1 = 4294967294
 // 0 = 4294967295
+
+// binary to decimal - native solution
+// parseInt("101010", 2).toString(10)
+
+// decimal to binary
+// parseInt(1234).toString(2)
