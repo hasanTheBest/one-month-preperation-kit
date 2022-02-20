@@ -24,7 +24,7 @@ function sockMerchant(n, ar) {
 
 console.log(sockMerchant(10, [1, 1, 3, 1, 2, 1, 3, 3, 3, 3])); // 4
 
-// Solution is rejected with 4 test case failed
+// SOLUTION is rejected with 4 test case failed
 // function sockMerchant(n, ar) {
 //   ar.sort((a, b) => a - b)
 //   let pair = 0;
