@@ -3,14 +3,16 @@ function pageCount(n, p) {
     return 0;
   }
 
-  if (1 === n - p && n % 2 === 0) {return 1};
+  if (1 === n - p && n % 2 === 0) {
+    return 1;
+  }
 
   let pagesToTurn;
   if (p < n / 2) {
-    //   left hand side, first to last
+    // first to last
     pagesToTurn = Math.floor(p / 2);
   } else {
-    //   right hand side last to first
+    // last to first
     pagesToTurn = Math.floor((n - p) / 2);
   }
 
